@@ -36,6 +36,12 @@ struct ResamplerInfo {
 
 	/*
 	  * Points to a function that can be used to create an instance of the resampler.
+	  *
+	  * @param inRate  The input sampling rate.
+	  * @param outRate The desired output sampling rate.
+	  * @param periodSize The maximum number of input samples to resample at a time/The
+	  *                   maximal inlen passed to Resampler::resample.
+	  * @return Pointer to the created instance on the free store.
 	  */
 	Resampler * (*create)(long inRate, long outRate, std::size_t periodSize);
 
