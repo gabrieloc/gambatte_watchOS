@@ -1,1 +1,0 @@
-# gambatte_watchOS
