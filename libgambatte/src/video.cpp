@@ -31,9 +31,9 @@ void LCD::setDmgPalette(unsigned long palette[], unsigned long const dmgColors[]
 }
 
 static unsigned long gbcToRgb32(unsigned const bgr15) {
-	unsigned long const r = bgr15       & 0x1F;
+	unsigned long const r = bgr15 >> 10 & 0x1F;
 	unsigned long const g = bgr15 >>  5 & 0x1F;
-	unsigned long const b = bgr15 >> 10 & 0x1F;
+	unsigned long const b = bgr15       & 0x1F;
 
 	return ((r * 13 + g * 2 + b) >> 1) << 16
 	     | (g * 3 + b) << 9
